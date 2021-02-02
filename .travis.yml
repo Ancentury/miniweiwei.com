@@ -2,7 +2,7 @@ language: ruby
 before_script:
   - rm -rf public
 script:
-  - bundle exce jekyll build
+  - bundle exec jekyll build
 branches:
   only:
     - main
