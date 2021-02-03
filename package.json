@@ -1,0 +1,25 @@
+{
+  "name": "jekyll-static-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "node deploy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ancentury/miniweiwei.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ancentury/miniweiwei.com/issues"
+  },
+  "homepage": "https://github.com/Ancentury/miniweiwei.com#readme",
+  "dependencies": {
+    "glob": "^7.1.6",
+    "ssh2-sftp-client": "^6.0.1",
+    "upath": "^2.0.1"
+  }
+}
