@@ -3,17 +3,17 @@ before_script:
 - npm install
 - rm -rf public
 - bundle exec jekyll build
-- openssl aes-256-cbc -K $encrypted_a3dc00bf5c6a_key -iv $encrypted_a3dc00bf5c6a_iv
-  -in oregon_key.pem.enc -out /tmp/oregon_key.pem -d
+- openssl aes-256-cbc -K $encrypted_741b20828c2f_key -iv $encrypted_741b20828c2f_iv
+  -in oregon_key.pem.enc -out oregon_key.pem -d
 - eval "$(ssh-agent -s)"
-- chmod 600 /tmp/oregon_key.pem
-- ssh-add /tmp/oregon_key.pem
+- chmod 600 oregon_key.pem
+- ssh-add oregon_key.pem
 addons:
-  ssh_known_hosts: ${FTP_DEPLOY_HOST}
+  ssh_known_hosts: 52.37.115.83
 script:
 - npm run deploy
 after_script:
-- rm -f /tmp/oregon_key.pem
+- rm -f oregon_key.pem
 branches:
   only:
   - main
