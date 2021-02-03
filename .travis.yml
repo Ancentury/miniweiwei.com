@@ -1,15 +1,15 @@
 language: ruby
-addons:
-  ssh_known_hosts: $FTP_DEPLOY_HOST
 before_script:
 - npm install
 - rm -rf public
 - bundle exec jekyll build
-- openssl aes-256-cbc -K $encrypted_54e2830f5419_key -iv $encrypted_54e2830f5419_iv
+- openssl aes-256-cbc -K $encrypted_a3dc00bf5c6a_key -iv $encrypted_a3dc00bf5c6a_iv
   -in oregon_key.pem.enc -out /tmp/oregon_key.pem -d
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/oregon_key.pem
 - ssh-add /tmp/oregon_key.pem
+addons:
+  ssh_known_hosts: ${FTP_DEPLOY_HOST}
 script:
 - npm run deploy
 after_script:
