@@ -5,7 +5,7 @@ before_script:
 - bundle exec jekyll build
 script: 
 - aws s3 sync public/ s3://miniweiwei.com --acl public-read --delete
-- aws cloudfront create-invalidation --distribution -id E3HU0NTC7ADQGG --paths '/*'
+- aws cloudfront create-invalidation --distribution-id E3HU0NTC7ADQGG --paths '/*'
 branches:
   only:
   - main
