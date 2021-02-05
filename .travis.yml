@@ -4,7 +4,7 @@ before_script:
 - rm -rf public
 - bundle exec jekyll build
 - openssl aes-256-cbc -K $encrypted_7e2db7b1cb41_key -iv $encrypted_7e2db7b1cb41_iv
-  -in oregon_key.pem.enc -out oregon_key.pem -d
+  -in oregon_key.pem.enc -out .\\oregon_key.pem -d
 - eval "$(ssh-agent -s)"
 - chmod 600 oregon_key.pem
 - ssh-add oregon_key.pem
